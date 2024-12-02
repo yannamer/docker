@@ -30,7 +30,7 @@ spec:
         service: web
     spec:
       containers:
-      - image: yamer/tripmeal  
+      - image: europe-west2-docker.pkg.dev/gq-cloud-computing/tripmeal-repo/tripmeal:1.0
         name: web
         ports:
         - containerPort: 5000
@@ -82,7 +82,7 @@ spec:
         service: db
     spec:
       containers:
-      - image: yamer/tripmeal  
+      - image: europe-west2-docker.pkg.dev/gq-cloud-computing/tripmeal-repo/db:1.0
         name: db
         ports:
         - containerPort: 3306
