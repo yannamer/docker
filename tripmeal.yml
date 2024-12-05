@@ -5,8 +5,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - name: http
-    port: 5000
+  - port: 5000
     targetPort: 5000
     protocol: TCP
   selector:
@@ -30,7 +29,7 @@ spec:
         service: web
     spec:
       containers:
-      - image: europe-west2-docker.pkg.dev/gq-cloud-computing/tripmeal-repo/tripmeal:1.0
+      - image: europe-west4-docker.pkg.dev/gq-cloud-computing/tripmeal-repo-west4/tripmeal:1.0
         name: web
         ports:
         - containerPort: 5000
@@ -58,8 +57,7 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-  - name: mysql
-    port: 3306
+  - port: 3306
     protocol: TCP
   selector:
     app: tripmeal
@@ -82,7 +80,7 @@ spec:
         service: db
     spec:
       containers:
-      - image: europe-west2-docker.pkg.dev/gq-cloud-computing/tripmeal-repo/db:1.0
+      - image: mysql:8.0
         name: db
         ports:
         - containerPort: 3306
